@@ -50,7 +50,7 @@ ROOT_URLCONF = 'config.urls'
 # https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# APPS
+# APP CONFIGURATION
 # ------------------------------------------------------------------------------
 DJANGO_APPS = [
     'django.contrib.auth',
@@ -63,15 +63,15 @@ DJANGO_APPS = [
     'django.contrib.admin',
 ]
 THIRD_PARTY_APPS = [
-    'crispy_forms',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
+    'allauth', # registration
+    'allauth.account', # registration
+    'allauth.socialaccount', # registration
     'rest_framework',
 ]
 LOCAL_APPS = [
     'instagram.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'instagram.images.apps.ImagesConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
