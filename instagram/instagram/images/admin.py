@@ -7,7 +7,13 @@ class ImageAdmin(admin.ModelAdmin):
 
 @admin.register(models.Like)
 class LikeAdmin(admin.ModelAdmin):
-    pass
+    
+    list_display = (
+        'creator',
+        'image',
+        'created_at',
+        'updated_at',
+    )
 
 @admin.register(models.Comment)
 class CommentAdmin(admin.ModelAdmin):
