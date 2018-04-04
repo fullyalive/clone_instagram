@@ -3,7 +3,15 @@ from . import models
 
 @admin.register(models.Image)
 class ImageAdmin(admin.ModelAdmin):
-    pass
+    
+    list_display = (
+        'created_at',
+        'updated_at',
+        'file',
+        'location',
+        'caption',
+        'creator',
+    )
 
 @admin.register(models.Like)
 class LikeAdmin(admin.ModelAdmin):
