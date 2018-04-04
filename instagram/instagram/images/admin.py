@@ -11,4 +11,11 @@ class LikeAdmin(admin.ModelAdmin):
 
 @admin.register(models.Comment)
 class CommentAdmin(admin.ModelAdmin):
-    pass
+    
+    list_display = (
+        'message',
+        'creator',
+        'image',
+        'created_at',
+        'updated_at',
+    )
