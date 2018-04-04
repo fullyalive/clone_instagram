@@ -5,12 +5,12 @@ from . import models
 class ImageAdmin(admin.ModelAdmin):
     
     list_display = (
-        'created_at',
-        'updated_at',
         'file',
         'location',
         'caption',
         'creator',
+        'created_at',
+        'updated_at',
     )
 
 @admin.register(models.Like)
