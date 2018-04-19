@@ -3,7 +3,7 @@ from . import models
 from instagram.users import models as user_models
 
 
-class UserProfileImageSerializer(serializers.ModelSerializer):
+class CountImageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Image
@@ -59,5 +59,6 @@ class ImageSerializer(serializers.ModelSerializer):
             'caption',
             'comments',
             'like_count',
-            'creator'
+            'creator',
+            'tags'
         )
