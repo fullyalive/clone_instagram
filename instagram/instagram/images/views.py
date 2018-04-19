@@ -124,4 +124,9 @@ class Search(APIView):
 
         hashtags = request.query_param.get('hashtags', None)
 
-        print(hashtags)
+        hashtags = hashtags.split(",")
+
+        images = models.Image.objects.filter(
+            tags__name__in=hashtags).distinct()
+
+        print(images)
