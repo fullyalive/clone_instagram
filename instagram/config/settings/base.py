@@ -70,9 +70,11 @@ THIRD_PARTY_APPS = [
     'taggit', # Tags for the photos
 ]
 LOCAL_APPS = [
+    # Custom users app
     'instagram.users.apps.UsersConfig',
     # Your stuff: custom apps go here
-    'instagram.images.apps.ImagesConfig',
+    'instagram.images.apps.ImagesConfig', # images app
+    'instagram.notifications.apps.NotificationsConfig', # notifications app
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
