@@ -24,4 +24,5 @@ class Notification(image_models.TimeStampedModel):
         null=True,
         blank=True,
         on_delete=models.CASCADE)
+    comment = models.TextField(null=True, blank=True)
 
