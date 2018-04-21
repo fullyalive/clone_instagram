@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from . import models, serializers
+from instagram.notifications import views as notification_views
 
 
 class Feed(APIView):
@@ -36,8 +37,6 @@ class LikeImage(APIView):
 
         user = request.user
 
-        # create notification for like
-
         try:
             found_image = models.Image.objects.get(id=image_id)
         except models.Image.DoesNotExist:
@@ -58,6 +57,10 @@ class LikeImage(APIView):
             )
 
             new_like.save()
+
+            # create notification for like
+            notification_views.create_notification(
+                user, found_image.creator, 'like', found_image)
 
             return Response(status=status.HTTP_201_CREATED)
 
@@ -99,6 +102,10 @@ class CommentOnImage(APIView):
 
             serializer.save(creator=user, image=found_image)
 
+            # create notification for comment
+            notification_views.create_notification(
+                user, found_image.creator, 'comment', found_image, serializer.data['message'])
+
             return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
         else:
@@ -111,8 +118,6 @@ class Comment(APIView):
     def delete(self, request, comment_id, format=None):
 
         user = request.user
-
-        #create notification for comment
 
         try:
             comment = models.Comment.objects.get(id=comment_id, creator=user)

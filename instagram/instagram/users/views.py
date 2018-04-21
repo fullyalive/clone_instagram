@@ -2,6 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from . import models, serializers
+from instagram.notifications import views as notification_views
+
 
 class ExploreUsers(APIView):
 
@@ -13,11 +15,12 @@ class ExploreUsers(APIView):
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
+
 class FollowUser(APIView):
 
     def post(self, request, user_id, format=None):
 
-        user = requets.user
+        user = request.user
 
         # create notification for follow
 
@@ -30,7 +33,10 @@ class FollowUser(APIView):
 
         user.save()
 
-        return Response(stauts=status.HTTP_200_OK)
+        notification_views.create_notification(user, user_to_follow, 'follow')
+
+        return Response(status=status.HTTP_200_OK)
+
 
 class UnFollowUser(APIView):
 
@@ -58,10 +64,11 @@ class UserProfile(APIView):
             found_user = models.User.objects.get(username=username)
         except models.User.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-        
+
         serializer = serializers.UserProfileSerializer(found_user)
 
-        return Response(data=serializer.data,status=status.HTTP_200_OK)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+
 
 class UserFollowers(APIView):
 
@@ -93,7 +100,7 @@ class UserFollowing(APIView):
 
         serializer = serializers.ListUserSerializer(
             user_following, many=True)
-        
+
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
@@ -104,7 +111,7 @@ class Search(APIView):
         username = request.query_params.get('username', None)
 
         if username is not None:
-            
+
             users = models.User.objects.filter(username__istartswith=username)
 
             serializer = serializers.ListUserSerializer(users, many=True)
