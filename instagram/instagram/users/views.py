@@ -102,7 +102,7 @@ class UserProfile(APIView):
                 serializer.save()
 
                 return Response(data=serializer.data, status=status.HTTP_200_OK)
-            
+
             else:
 
                 return Response(data=serializer.errprs, status=status.HTTP_400_BAD_REQUEST)
@@ -160,29 +160,36 @@ class Search(APIView):
 
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
+
 class ChangePassword(APIView):
 
     def put(self, request, username, format=None):
 
         user = request.user
 
-        current_password = request.data.get('current_password', None)
+        if user.username == username:
 
-        if current_password is not None:
+            current_password = request.data.get('current_password', None)
 
-            password_match = user.check_password(current_password)
+            if current_password is not None:
 
-            if password_match:
+                passwords_match = user.check_password(current_password)
 
-                new_password = request.data.get('new_password', None)
+                if passwords_match:
 
-                if new_password is not None:
+                    new_password = request.data.get('new_password', None)
 
-                    user.set_password(new_password)
+                    if new_password is not None:
 
-                    user.save()
+                        user.set_password(new_password)
 
-                    return Response(status=status.HTTP_200_OK)
+                        user.save()
+
+                        return Response(status=status.HTTP_200_OK)
+
+                    else:
+
+                        return Response(status=status.HTTP_400_BAD_REQUEST)
 
                 else:
 
@@ -194,6 +201,4 @@ class ChangePassword(APIView):
 
         else:
 
-            return Response(status=status.HTTP_400_BAD_REQUEST)    
-
-
+            return Response(status=status.HTTP_401_UNAUTHORIZED)
