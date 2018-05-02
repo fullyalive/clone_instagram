@@ -2,6 +2,7 @@ from rest_framework import serializers
 from . import models
 from instagram.users import models as user_models
 
+
 class SmallImageSerializer(serializers.ModelSerializer):
 
     """ Used for the notifications """
@@ -11,6 +12,7 @@ class SmallImageSerializer(serializers.ModelSerializer):
         fields = (
             'file',
         )
+
 
 class CountImageSerializer(serializers.ModelSerializer):
 
@@ -73,6 +75,7 @@ class ImageSerializer(serializers.ModelSerializer):
             'created_at'
         )
 
+
 class InputImageSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -81,5 +84,4 @@ class InputImageSerializer(serializers.ModelSerializer):
             'file',
             'location',
             'caption',
-            
         )
