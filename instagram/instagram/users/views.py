@@ -59,7 +59,7 @@ class UnFollowUser(APIView):
 class UserProfile(APIView):
 
     def get_user(self, username):
-        
+
         try:
             found_user = models.User.objects.get(username=username)
             return found_user
@@ -88,7 +88,25 @@ class UserProfile(APIView):
 
             return Response(status=status.HTTP_404_NOT_FOUND)
 
-        if found_user.username == 
+        elif found_user.username != user.username:
+
+            return Response(status=status.HTTP_401_UNAUTHORIZED)
+
+        else:
+
+            serializer = serializers.UserProfileSerializer(
+                found_user, data=request.data, partial=True)
+
+            if serializer.is_valid():
+
+                serializer.save()
+
+                return Response(data=serializer.data, status=status.HTTP_200_OK)
+            
+            else:
+
+                return Response(data=serializer.errprs, status=status.HTTP_400_BAD_REQUEST)
+
 
 class UserFollowers(APIView):
 
