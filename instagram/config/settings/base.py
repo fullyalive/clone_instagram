@@ -70,11 +70,11 @@ THIRD_PARTY_APPS = [
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_framework',  # REST framework
-    'rest_framework.authtoken', 
+    'rest_framework.authtoken',
     'taggit',  # Tags for the photos
     'taggit_serializer',  # Tag serializer
-    'rest_auth', # Rest auth
-    'rest_auth.registration', # Enable registration
+    'rest_auth',  # Rest auth
+    'rest_auth.registration',  # Enable registration
 ]
 
 LOCAL_APPS = [
