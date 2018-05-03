@@ -64,19 +64,22 @@ DJANGO_APPS = [
     # Admin
     'django.contrib.admin',
 ]
+
 THIRD_PARTY_APPS = [
-    'allauth', # registration
-    'allauth.account', # registration
-    'allauth.socialaccount', # registration
-    'rest_framework', # REST framework
-    'taggit', # Tags for the photos
+    'allauth',  # registration
+    'allauth.account',  # registration
+    'allauth.socialaccount',  # registration
+    'rest_framework',  # REST framework
+    'taggit',  # Tags for the photos
+    'taggit_serializer',  # Tag serializer
 ]
+
 LOCAL_APPS = [
     # Custom users app
     'instagram.users.apps.UsersConfig',
     # Your stuff: custom apps go here
-    'instagram.images.apps.ImagesConfig', # images app
-    'instagram.notifications.apps.NotificationsConfig', # notifications app
+    'instagram.images.apps.ImagesConfig',  # images app
+    'instagram.notifications.apps.NotificationsConfig',  # notifications app
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
