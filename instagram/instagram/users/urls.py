@@ -46,8 +46,7 @@ urlpatterns = [
         name='change'
     ),
     url(
-        rege=r'^login/facebook/$',
+        regex=r'^login/facebook/$',
         view=views.FacebookLogin.as_view(),
-        name='fb_login'
-    ),
+        name='fb_login'),
 ]
