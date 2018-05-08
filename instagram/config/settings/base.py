@@ -76,6 +76,7 @@ THIRD_PARTY_APPS = [
     'taggit_serializer',  # Tag serializer
     'rest_auth',  # Rest auth
     'rest_auth.registration',  # Enable registration
+    'corsheaders', # To accept requests from React
 ]
 
 LOCAL_APPS = [
@@ -139,6 +140,7 @@ AUTH_PASSWORD_VALIDATORS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -155,6 +157,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
     str(APPS_DIR.path('static')),
+    str(ROOT_DIR.path('frontend', 'build', 'static'))
 ]
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
@@ -261,3 +264,7 @@ REST_FRAMEWORK = {
 
 REST_USE_JWT = True
 ACCOUNT_LOGOUT_ON_GET = True
+
+SOCIALACCOUNT_QUERY_EMAIL = True
+
+CORS_ORIGIN_ALLOW_ALL = True
