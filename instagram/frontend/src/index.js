@@ -6,7 +6,7 @@ import store, { history } from "redux/configureStore";
 import "index.css";
 import App from "App";
 
-console.log(store.getState());
+import "ReactotronConfig";
 
 ReactDOM.render(
   <Provider store={store}>
