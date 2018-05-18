@@ -9,4 +9,4 @@ import Container from "./container";
 // Check password
 // Check mail
 
-export default connect()
+export default connect()(Container);
