@@ -8,14 +8,14 @@ const Auth = (props, context) => (
       <img src={require("images/phone.png")} alt="Checkout our app. Is cool" />
     </div>
     <div className={styles.column}>
-    <div className={`${styles.whiteBox} ${styles.formBox}`}>
-      <img src={require("images/logo.jpg")} alt="인스타그램" />
-      {props.action === "login" && <LoginForm />}
-      {props.action === "signup" && <SignupForm />}
-    </div>
+      <div className={`${styles.whiteBox} ${styles.formBox}`}>
+        <img src={require("images/logo.jpg")} alt="인스타그램" />
+        {props.action === "login" && <LoginForm />}
+        {props.action === "signup" && <SignupForm />}
+      </div>
       <div className={styles.whiteBox}>
         {props.action === "login" && (
-          <p>
+          <p className={styles.text}>
             회원이 아니신가요?{" "}
             <span onClick={props.changeAction} className={styles.changeLink}>
               회원가입
@@ -23,7 +23,7 @@ const Auth = (props, context) => (
           </p>
         )}
         {props.action === "signup" && (
-          <p>
+          <p className={styles.text}>
             회원이신가요?{" "}
             <span onClick={props.changeAction} className={styles.changeLink}>
               로그인

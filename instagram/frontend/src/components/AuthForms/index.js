@@ -24,9 +24,10 @@ export const LoginForm = props => (
 
 export const SignupForm = props => (
   <div className={styles.formComponent}>
-    <h3>친구들의 사진과 동영상을 보려면 가입하세요.</h3>
+    <h3 className={styles.signupHeader}>
+      친구들의 사진과 동영상을 보려면 가입하세요.
+    </h3>
     <button className={styles.button}>
-      {" "}
       <Ionicon icon="logo-facebook" fontSize="20px" color="white" />
       Facebook으로 로그인
     </button>
@@ -46,7 +47,7 @@ export const SignupForm = props => (
       />
       <input type="submit" placeholder="가입" className={styles.button} />
     </form>
-    <p>
+    <p className={styles.terms}>
       가입하면 Instagram의 <span>약관,</span> <span>데이터 정책</span> 및{" "}
       <span>쿠키 정책</span>에 동의하게 됩니다.
     </p>
