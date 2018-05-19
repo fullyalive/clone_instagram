@@ -1,5 +1,5 @@
 export const translations = {
     en: {
-        "로그인": "Login"
+        "INSTAGRAM 정보": "ABOUT US"
     }
 };
