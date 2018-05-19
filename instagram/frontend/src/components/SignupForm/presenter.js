@@ -36,7 +36,7 @@ const SignupForm = (props, context) => (
       />
       <input
         type="submit"
-        placeholder={context.t("가입")}
+        value={context.t("가입")}
         className={formStyles.button}
       />
     </form>
