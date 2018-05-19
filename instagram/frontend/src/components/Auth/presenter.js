@@ -16,23 +16,23 @@ const Auth = (props, context) => (
       <div className={styles.whiteBox}>
         {props.action === "login" && (
           <p className={styles.text}>
-            회원이 아니신가요?{" "}
+            {context.t("회원이 아니신가요?")}{" "}
             <span onClick={props.changeAction} className={styles.changeLink}>
-              회원가입
+              {context.t("회원가입")}
             </span>
           </p>
         )}
         {props.action === "signup" && (
           <p className={styles.text}>
-            회원이신가요?{" "}
+            {context.t("회원이신가요?")}{" "}
             <span onClick={props.changeAction} className={styles.changeLink}>
-              로그인
+              {context.t("로그인")}
             </span>
           </p>
         )}
       </div>
       <div className={styles.appBox}>
-        <span>앱 다운로드</span>
+        <span>{context.t("앱 다운로드")}</span>
         <div className={styles.appstores}>
           <img src={require("images/ios.png")} alt="앱 스토어에서 다운로드" />
           <img
