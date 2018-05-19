@@ -3,7 +3,7 @@ msgstr ""
 "Language: en"
 
 #: src/components/Auth/presenter.js
-msgid "회원이 아니신가요?"
+msgid "계정이 없으신가요?"
 msgstr "Don't have an account?"
 
 #: src/components/Auth/presenter.js
@@ -11,80 +11,17 @@ msgid "회원가입"
 msgstr "Sign up"
 
 #: src/components/Auth/presenter.js
-msgid "회원이신가요?"
+msgid "계정이 있으신가요?"
 msgstr "Have and account?"
 
 #: src/components/Auth/presenter.js
+#: src/components/LoginForm/presenter.js
 msgid "로그인"
 msgstr "Log in"
 
 #: src/components/Auth/presenter.js
 msgid "앱 다운로드"
 msgstr "Get the app"
-
-#: src/components/AuthForms/index.js
-msgid "아이디"
-msgstr "Id"
-
-#: src/components/AuthForms/index.js
-msgid "비밀번호"
-msgstr "Password"
-
-#: src/components/AuthForms/index.js
-msgid "또는"
-msgstr "or"
-
-#: src/components/AuthForms/index.js
-msgid "Facebook으로 로그인"
-msgstr "Log in with Facebook"
-
-#: src/components/AuthForms/index.js
-msgid "비밀번호를 잊으셨나요?"
-msgstr "Forgot password?"
-
-#: src/components/AuthForms/index.js
-msgid "친구들의 사진과 동영상을 보려면 가입하세요."
-msgstr "Sign up to see photos and videos from your friends."
-
-#: src/components/AuthForms/index.js
-msgid "이메일"
-msgstr "Mobile Number or Email"
-
-#: src/components/AuthForms/index.js
-msgid "성명"
-msgstr "Full Name"
-
-#: src/components/AuthForms/index.js
-msgid "사용자 이름"
-msgstr "Username"
-
-#: src/components/AuthForms/index.js
-msgid "가입"
-msgstr "Sign up"
-
-#: src/components/AuthForms/index.js
-msgid "가입하면 Instagram의 "
-msgstr "By signing up, you are agree to our "
-
-#: src/components/AuthForms/index.js
-msgid "약관,"
-msgstr "Terms"
-
-#: src/components/AuthForms/index.js
-msgid "데이터 정책"
-msgstr "Data Policy"
-
-#: src/components/AuthForms/index.js
-msgid " 및"
-msgstr "and"
-
-#: src/components/AuthForms/index.js
-msgid "쿠키 정책"
-msgstr "Cookies Policy"
-
-#: src/components/AuthForms/index.js
-msgid "에 동의하게 됩니다."
-msgstr "."
 
 #: src/components/Footer/index.js
 msgid "INSTAGRAM 정보"
@@ -125,4 +62,71 @@ msgstr "DIRECTORY"
 #: src/components/Footer/index.js
 msgid "언어"
 msgstr "LANGUAGE"
+
+#: src/components/LoginForm/presenter.js
+msgid "전화번호, 사용자 이름 또는 이메일"
+msgstr "Phone number,username, or email"
+
+#: src/components/LoginForm/presenter.js
+#: src/components/SignupForm/presenter.js
+msgid "비밀번호"
+msgstr "Password"
+
+#: src/components/LoginForm/presenter.js
+#: src/components/SignupForm/presenter.js
+msgid "또는"
+msgstr "or"
+
+#: src/components/LoginForm/presenter.js
+#: src/components/SignupForm/presenter.js
+msgid "Facebook으로 로그인"
+msgstr "Log in with Facebook"
+
+#: src/components/LoginForm/presenter.js
+msgid "비밀번호를 잊으셨나요?"
+msgstr "Forgot password?"
+
+#: src/components/SignupForm/presenter.js
+msgid "친구들의 사진과 동영상을 보려면 가입하세요."
+msgstr "Sign up to see photos and videos from your friends."
+
+#: src/components/SignupForm/presenter.js
+msgid "휴대폰 번호 또는 이메일 주소"
+msgstr "Mobile Number or Email"
+
+#: src/components/SignupForm/presenter.js
+msgid "성명"
+msgstr "Full Name"
+
+#: src/components/SignupForm/presenter.js
+msgid "사용자 이름"
+msgstr "Username"
+
+#: src/components/SignupForm/presenter.js
+msgid "가입"
+msgstr "Sign up"
+
+#: src/components/SignupForm/presenter.js
+msgid "가입하면 Instagram의 "
+msgstr "By signing up, you are agree to our "
+
+#: src/components/SignupForm/presenter.js
+msgid "약관,"
+msgstr "Terms"
+
+#: src/components/SignupForm/presenter.js
+msgid "데이터 정책"
+msgstr "Data Policy"
+
+#: src/components/SignupForm/presenter.js
+msgid " 및"
+msgstr "and"
+
+#: src/components/SignupForm/presenter.js
+msgid "쿠키 정책"
+msgstr "Cookies Policy"
+
+#: src/components/SignupForm/presenter.js
+msgid "에 동의하게 됩니다."
+msgstr "."
 

@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./styles.scss";
-import { LoginForm, SignupForm } from "components/AuthForms";
+import PropTypes from "prop-types";
+import LoginForm from "components/LoginForm";
+import SignupForm from "components/SignupForm";
 
 const Auth = (props, context) => (
   <main className={styles.auth}>
@@ -16,7 +18,7 @@ const Auth = (props, context) => (
       <div className={styles.whiteBox}>
         {props.action === "login" && (
           <p className={styles.text}>
-            {context.t("회원이 아니신가요?")}{" "}
+            {context.t("계정이 없으신가요?")}{" "}
             <span onClick={props.changeAction} className={styles.changeLink}>
               {context.t("회원가입")}
             </span>
@@ -24,7 +26,7 @@ const Auth = (props, context) => (
         )}
         {props.action === "signup" && (
           <p className={styles.text}>
-            {context.t("회원이신가요?")}{" "}
+            {context.t("계정이 있으신가요?")}{" "}
             <span onClick={props.changeAction} className={styles.changeLink}>
               {context.t("로그인")}
             </span>
@@ -44,4 +46,9 @@ const Auth = (props, context) => (
     </div>
   </main>
 );
+
+Auth.contextTypes = {
+  t: PropTypes.func.isRequired
+};
+
 export default Auth;
