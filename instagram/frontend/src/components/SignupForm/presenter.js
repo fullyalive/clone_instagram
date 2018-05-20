@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Ionicon from "react-ionicons";
+import FacebookLogin from "react-facebook-login";
 import formStyles from "shared/formStyles.scss";
 
 const SignupForm = (props, context) => (
@@ -8,31 +9,48 @@ const SignupForm = (props, context) => (
     <h3 className={formStyles.signupHeader}>
       {context.t("친구들의 사진과 동영상을 보려면 가입하세요.")}
     </h3>
-    <button className={formStyles.button}>
-      <Ionicon icon="logo-facebook" fontSize="20px" color="white" />
-      {context.t("Facebook으로 로그인")}
-    </button>
+    <FacebookLogin
+      appId="168532063764387"
+      autoLoad={false}
+      fields="name,email,picture"
+      callback={props.handleFacebookLogin}
+      cssClass={formStyles.button}
+      icon="fa-facebook-official"
+      textButton={context.t("Facebook으로 로그인")}
+    />
     <span className={formStyles.divider}>{context.t("또는")}</span>
-    <form className={formStyles.form}>
+    <form className={formStyles.form} onSubmit={props.handleSubmit}>
       <input
         type="email"
         placeholder={context.t("휴대폰 번호 또는 이메일 주소")}
         className={formStyles.textInput}
+        value={props.emailValue}
+        onChange={props.handleInputChange}
+        name="email"
       />
       <input
         type="text"
         placeholder={context.t("성명")}
         className={formStyles.textInput}
+        value={props.fullnameValue}
+        onChange={props.handleInputChange}
+        name="fullname"
       />
       <input
-        type="username"
+        type="text"
         placeholder={context.t("사용자 이름")}
         className={formStyles.textInput}
+        value={props.usernameValue}
+        onChange={props.handleInputChange}
+        name="username"
       />
       <input
         type="password"
         placeholder={context.t("비밀번호")}
         className={formStyles.textInput}
+        value={props.passwordValue}
+        onChange={props.handleInputChange}
+        name="password"
       />
       <input
         type="submit"
@@ -48,6 +66,16 @@ const SignupForm = (props, context) => (
     </p>
   </div>
 );
+
+SignupForm.propTypes = {
+  emailValue: PropTypes.string.isRequired,
+  passwordValue: PropTypes.string.isRequired,
+  fullnameValue: PropTypes.string.isRequired,
+  usernameValue: PropTypes.string.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  handleFacebookLogin: PropTypes.func.isRequired
+};
 
 SignupForm.contextTypes = {
   t: PropTypes.func.isRequired
