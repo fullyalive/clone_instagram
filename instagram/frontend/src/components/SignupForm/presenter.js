@@ -18,7 +18,11 @@ const SignupForm = (props, context) => (
       textButton={context.t("Facebook으로 로그인")}
     />
     <span className={formStyles.divider}>{context.t("또는")}</span>
-    <form className={formStyles.form} onSubmit={props.handleSubmit}>
+    <form
+      className={formStyles.form}
+      onSubmit={props.handleSubmit}
+      method="post"
+    >
       <input
         type="email"
         placeholder={context.t("휴대폰 번호 또는 이메일 주소")}
@@ -31,12 +35,12 @@ const SignupForm = (props, context) => (
         type="text"
         placeholder={context.t("성명")}
         className={formStyles.textInput}
-        value={props.fullnameValue}
+        value={props.nameValue}
         onChange={props.handleInputChange}
-        name="fullname"
+        name="name"
       />
       <input
-        type="text"
+        type="username"
         placeholder={context.t("사용자 이름")}
         className={formStyles.textInput}
         value={props.usernameValue}
@@ -55,6 +59,7 @@ const SignupForm = (props, context) => (
         type="submit"
         value={context.t("가입")}
         className={formStyles.button}
+        onChange={props.handleInputChange}
       />
     </form>
     <p className={formStyles.terms}>
@@ -68,9 +73,9 @@ const SignupForm = (props, context) => (
 
 SignupForm.propTypes = {
   emailValue: PropTypes.string.isRequired,
-  passwordValue: PropTypes.string.isRequired,
-  fullnameValue: PropTypes.string.isRequired,
+  nameValue: PropTypes.string.isRequired,
   usernameValue: PropTypes.string.isRequired,
+  passwordValue: PropTypes.string.isRequired,
   handleInputChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   handleFacebookLogin: PropTypes.func.isRequired
