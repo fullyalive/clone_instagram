@@ -59,7 +59,7 @@ function usernameLogin(username, password) {
 }
 
 function createAccount(username, password, email, name) {
-  return dispatch => {
+  return function(dispatch) {
     fetch("/rest-auth/registration/", {
       method: "POST",
       headers: {
