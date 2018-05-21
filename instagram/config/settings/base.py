@@ -1,3 +1,4 @@
+
 """
 Django settings for instagram project.
 For more information on this file, see
@@ -55,6 +56,7 @@ THIRD_PARTY_APPS = [
     'rest_auth',  # rest auth
     'rest_auth.registration',  # enable registration
     'corsheaders',  # To accept requests from React
+    'sslserver', # SSL server
 ]
 
 # Apps specific for this project go here.
@@ -109,7 +111,7 @@ EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = [
-    ("""fullyalive""", 'wogud1202@gmail.com'),
+    ("""Nomad Coders""", 'nico@nomadcoders.co'),
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
@@ -299,39 +301,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 JWT_AUTH = {
     'JWT_VERIFY_EXPIRATION': False
-}
-
-SOCIALACCOUNT_PROVIDERS = {
-    'facebook': {
-        'SCOPE': [
-            'email',
-            'public_profile',
-            'user_friends'
-        ],
-        'FIELDS': [
-            'id',
-            'email',
-            'name',
-            'first_name',
-            'last_name',
-            'verified',
-            'locale',
-            'timezone',
-            'link',
-            'gender',
-            'updated_time',
-            'picture'
-        ],
-        'AUTH_PARAMS': {
-            #'auth_type': 'reauthenticate'
-        },
-        'METHOD': 'oauth2',
-        #'LOCALE_FUNC': 'path.to.callable',
-        'VERIFIED_EMAIL': True,
-        'VERSION': 'v2.4'
-    }
-}
-
-REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'instagram.users.serializers.SignUpSerializer'
 }

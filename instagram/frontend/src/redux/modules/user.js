@@ -58,6 +58,12 @@ function usernameLogin(username, password) {
   };
 }
 
+function createAccount(username, password, email, name){
+  return function(dispatch){
+    fetch()
+  }
+}
+
 // initial state
 
 const initialState = {
