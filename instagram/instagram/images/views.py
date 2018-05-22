@@ -240,7 +240,7 @@ class ImageDetail(APIView):
 
         if image is None:
 
-            return Response(status=status.HTTP_401_UNAUTHORIZED)
+            return Response(status=status.HTTP_400_BAD_REQUEST)
 
         serializer = serializers.InputImageSerializer(
             image, data=request.data, partial=True)
@@ -263,7 +263,7 @@ class ImageDetail(APIView):
 
         if image is None:
 
-            return Response(status=status.HTTP_401_UNAUTHORIZED)
+            return Response(status=status.HTTP_400_BAD_REQUEST)
 
         image.delete()
 
