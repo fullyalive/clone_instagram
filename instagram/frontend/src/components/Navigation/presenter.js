@@ -10,7 +10,7 @@ const Navigation = (props, context) => (
       <div className={styles.column}>
         <Link to="/">
           <img
-            src={require("images/logo.jpg")}
+            src={require("images/logo.png")}
             className={styles.logo}
             alt={context.t("로고")}
           />

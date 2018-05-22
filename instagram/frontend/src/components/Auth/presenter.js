@@ -11,7 +11,7 @@ const Auth = (props, context) => (
     </div>
     <div className={styles.column}>
       <div className={`${styles.whiteBox} ${styles.formBox}`}>
-        <img src={require("images/logo.jpg")} alt="인스타그램" />
+        <img src={require("images/logo.png")} alt="인스타그램" />
         {props.action === "login" && <LoginForm />}
         {props.action === "signup" && <SignupForm />}
       </div>
