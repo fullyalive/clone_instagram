@@ -8,6 +8,7 @@
 
 function getFeed() {
   return (dispatch, getState) => {
+    const {
       user: { token }
     } = getState();
     fetch("/images/", {
