@@ -15,7 +15,7 @@ function setFeed(feed) {
   };
 }
 
-// API actions
+// API Actions
 
 function getFeed() {
   return (dispatch, getState) => {
@@ -36,7 +36,8 @@ function getFeed() {
       .then(json => dispatch(setFeed(json)));
   };
 }
-// initial state
+
+// Initial State
 
 const initialState = {};
 
@@ -51,7 +52,7 @@ function reducer(state = initialState, action) {
   }
 }
 
-// reducer functions
+// Reducer Functions
 
 function applySetFeed(state, action) {
   const { feed } = action;
@@ -61,7 +62,7 @@ function applySetFeed(state, action) {
   };
 }
 
-// exports
+// Exports
 
 const actionCreators = {
   getFeed
@@ -69,6 +70,6 @@ const actionCreators = {
 
 export { actionCreators };
 
-// default reducer export
+// Export reducer by default
 
 export default reducer;

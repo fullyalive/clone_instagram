@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./styles.scss";
 import PhotoActions from "components/PhotoActions";
 import PhotoComments from "components/PhotoComments";
+import TimeStamp from "components/TimeStamp";
 
 const FeedPhoto = (props, context) => {
   return (
@@ -25,6 +26,7 @@ const FeedPhoto = (props, context) => {
           creator={props.creator.username}
           comments={props.comments}
         />
+        <TimeStamp time={props.natural_time} />
       </div>
     </div>
   );
@@ -48,7 +50,7 @@ FeedPhoto.propTypes = {
       }).isRequired
     })
   ).isRequired,
-  created_at: PropTypes.string.isRequired
+  natural_time: PropTypes.string.isRequired
 };
 
 export default FeedPhoto;
