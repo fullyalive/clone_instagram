@@ -140,7 +140,7 @@ class UserFollowing(APIView):
         user_following = found_user.following.all()
 
         serializer = serializers.ListUserSerializer(
-            user_following, many=True)
+            user_following, many=True, context={"request": request})
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 

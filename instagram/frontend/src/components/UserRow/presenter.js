@@ -16,26 +16,31 @@ const UserRow = (props, context) => (
       </div>
     </div>
     <span className={styles.column}>
-        <button className={styles.button}>{context.t("팔로우")}</button>
+      <button className={styles.button} onClick={props.handleClick}>
+        {props.user.following ? context.t("언팔로우") : context.t("팔로우")}
+      </button>
     </span>
   </div>
 );
 
 UserRow.contextTypes = {
-    t: PropTypes.func.isRequired
+  t: PropTypes.func.isRequired
 };
 
 UserRow.propTypes = {
-    user: PropTypes.shape({
-        profile_image: PropTypes.string,
-        username: PropTypes.string.isRequired,
-        name: PropTypes.string
-    }).isRequired,
-    big: PropTypes.bool
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    profile_image: PropTypes.string,
+    username: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    following: PropTypes.bool.isRequired
+  }).isRequired,
+  big: PropTypes.bool,
+  handleClick: PropTypes.func.isRequired
 };
 
 UserRow.defaultProps = {
-    big: false
+  big: false
 };
 
 export default UserRow;
