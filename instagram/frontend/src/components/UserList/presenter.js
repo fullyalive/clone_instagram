@@ -14,7 +14,9 @@ const UserList = props => (
           <Ionicon icon="md-close" fontSize="20px" color="black" />
         </span>
       </header>
-      <div className={styles.content}>{props.loading ? <Loading /> : null}</div>
+      <div className={styles.content}>
+        {props.loading ? <Loading /> : <RenderUsers list={props.userList} />}
+      </div>
     </div>
   </div>
 );
@@ -22,11 +24,16 @@ const UserList = props => (
 const RenderUsers = props =>
   props.list.map(user => <UserRow user={user} key={user.id} />);
 
+RenderUsers.propTypes = {
+  list: PropTypes.array
+};
+
 UserList.propTypes = {
   title: PropTypes.string.isRequired,
   loading: PropTypes.bool.isRequired,
-  userList: PropTypes.array,
-  closeLikes: PropTypes.func.isRequired
+  users: PropTypes.array,
+  closeLikes: PropTypes.func.isRequired,
+  userList: PropTypes.array
 };
 
 export default UserList;

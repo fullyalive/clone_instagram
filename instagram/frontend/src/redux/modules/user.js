@@ -163,7 +163,7 @@ function applyLogout(state, action) {
 function applySetUserList(state, action) {
   const { userList } = action;
   return {
-    ...this.state,
+    ...state,
     userList
   };
 }
