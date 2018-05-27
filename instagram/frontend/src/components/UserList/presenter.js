@@ -17,7 +17,6 @@ const UserList = props => (
     </div>
   </div>
 );
-
 UserList.propTypes = {
   title: PropTypes.string.isRequired,
   loading: PropTypes.bool.isRequired,

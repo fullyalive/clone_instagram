@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import FeedPhoto from "./presenter";
 
 class Container extends Component {
+  state = {
+    seeingLikes: false
+  };
   render() {
     return (
       <FeedPhoto
@@ -12,12 +15,11 @@ class Container extends Component {
       />
     );
   }
-  openLikes = () => {
+  _openLikes = () => {
     this.setState({
       seeingLikes: true
     });
   };
-
   _closeLikes = () => {
     this.setState({
       seeingLikes: false
