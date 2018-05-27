@@ -27,6 +27,7 @@ const FeedPhoto = (props, context) => {
           number={props.like_count}
           isLiked={props.is_liked}
           photoId={props.id}
+          openLikes={props.openLikes}
         />
         <PhotoComments
           caption={props.caption}
@@ -36,7 +37,9 @@ const FeedPhoto = (props, context) => {
         <TimeStamp time={props.natural_time} />
         <CommentBox photoId={props.id} />
       </div>
-      {props.seeingLikes && <UserList title={context.t("좋아요")} />}
+      {props.seeingLikes && (
+        <UserList title={context.t("좋아요")} closeLikes={props.closeLikes} />
+      )}
     </div>
   );
 };
@@ -64,7 +67,10 @@ FeedPhoto.propTypes = {
     })
   ).isRequired,
   natural_time: PropTypes.string.isRequired,
-  is_liked: PropTypes.bool.isRequired
+  is_liked: PropTypes.bool.isRequired,
+  seeingLikes: PropTypes.bool.isRequired,
+  closeLikes: PropTypes.func.is_liked,
+  openLikes: PropTypes.func.isRequired
 };
 
 export default FeedPhoto;
