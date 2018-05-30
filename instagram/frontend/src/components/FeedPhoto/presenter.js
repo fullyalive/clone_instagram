@@ -8,6 +8,7 @@ import CommentBox from "components/CommentBox";
 import UserList from "components/UserList";
 
 const FeedPhoto = (props, context) => {
+  
   return (
     <div className={styles.feedPhoto}>
       <header className={styles.header}>
@@ -59,6 +60,7 @@ FeedPhoto.propTypes = {
   caption: PropTypes.string.isRequired,
   comments: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired,
       message: PropTypes.string.isRequired,
       creator: PropTypes.shape({
         profile_image: PropTypes.string,

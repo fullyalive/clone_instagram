@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Feed from "./presenter";
+import { get } from "http";
 
 class Container extends Component {
   state = {
@@ -12,19 +13,25 @@ class Container extends Component {
   };
   componentDidMount() {
     const { getFeed } = this.props;
-    getFeed();
+      
+    if (!this.props.feed) {
+      getFeed();
+    } else {
+      this.setState({
+        loading: false
+      });
+    }
   }
   componentWillReceiveProps = nextProps => {
     if (nextProps.feed) {
       this.setState({
-        loading: false,
-        feed: nextProps.feed
+        loading: false
       });
     }
   };
-
   render() {
-    return <Feed {...this.state} />;
+    const { feed } = this.props;
+    return <Feed {...this.state} feed={feed} />;
   }
 }
 

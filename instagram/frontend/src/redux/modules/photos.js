@@ -31,6 +31,15 @@ function doUnlikePhoto(photoId) {
     photoId
   };
 }
+
+function addComment(photoId, comment) {
+  return {
+    type: ADD_COMMENT,
+    photoId,
+    comment
+  };
+}
+
 // API Actions
 
 function getFeed() {
@@ -49,7 +58,9 @@ function getFeed() {
         }
         return response.json();
       })
-      .then(json => dispatch(setFeed(json)));
+      .then(json => {
+        dispatch(setFeed(json));
+      });
   };
 }
 
@@ -124,13 +135,6 @@ function commentPhoto(photoId, message) {
   };
 }
 
-function addComment(photoId, comment) {
-  return {
-    type: ADD_COMMENT,
-    photoId,
-    comment
-  };
-}
 // Initial State
 
 const initialState = {};
