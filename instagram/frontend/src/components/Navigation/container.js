@@ -10,11 +10,12 @@ class Container extends Component {
     goToSearch: PropTypes.func.isRequired
   };
   render() {
+    const { term } = this.state;
     return (
       <Navigation
         onSubmit={this._onSubmit}
         onInputChange={this._onInputChange}
-        value={this.state.term}
+        value={term}
       />
     );
   }
@@ -32,7 +33,7 @@ class Container extends Component {
     event.preventDefault();
     goToSearch(term);
     this.setState({
-      term:""
+      term: ""
     });
   };
 }

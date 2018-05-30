@@ -4,13 +4,16 @@ import Container from "./container";
 
 const mapStateToProps = (state, ownProps) => {
   const {
-    user: { userList, imageList }
+    user: { userList, imageList },
+    routing: { location }
   } = state;
   return {
+    userList,
     imageList,
-    userList
+    location
   };
 };
+
 const mapDispatchToProps = (dispatch, ownProps) => {
   const {
     match: {

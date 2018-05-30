@@ -25,13 +25,6 @@ function logout() {
   };
 }
 
-function setUserList(userList) {
-  return {
-    type: SET_USER_LIST,
-    userList
-  };
-}
-
 function setFollowUser(userId) {
   return {
     type: FOLLOW_USER,
@@ -43,6 +36,13 @@ function setUnfollowUser(userId) {
   return {
     type: UNFOLLOW_USER,
     userId
+  };
+}
+
+function setUserList(userList) {
+  return {
+    type: SET_USER_LIST,
+    userList
   };
 }
 
@@ -63,7 +63,7 @@ function setImageList(imageList) {
 // API actions
 
 function facebookLogin(access_token) {
-  return function(dispatch) {
+  return dispatch => {
     fetch("/users/login/facebook/", {
       method: "POST",
       headers: {
@@ -84,7 +84,7 @@ function facebookLogin(access_token) {
 }
 
 function usernameLogin(username, password) {
-  return function(dispatch) {
+  return dispatch => {
     fetch("/rest-auth/login/", {
       method: "POST",
       headers: {
@@ -106,7 +106,7 @@ function usernameLogin(username, password) {
 }
 
 function createAccount(username, password, email, name) {
-  return function(dispatch) {
+  return dispatch => {
     fetch("/rest-auth/registration/", {
       method: "POST",
       headers: {
@@ -235,7 +235,8 @@ function searchByTerm(searchTerm) {
 function searchUsers(token, searchTerm) {
   return fetch(`/users/search/?username=${searchTerm}`, {
     headers: {
-      Authorization: `JWT ${token}`
+      Authorization: `JWT ${token}`,
+      "Content-Type": "application/json"
     }
   })
     .then(response => {
@@ -248,9 +249,10 @@ function searchUsers(token, searchTerm) {
 }
 
 function searchImages(token, searchTerm) {
-  return fetch(`/users/search/?hashtags=${searchTerm}`, {
+  return fetch(`/images/search/?hashtags=${searchTerm}`, {
     headers: {
-      Authorization: `JWT ${token}`
+      Authorization: `JWT ${token}`,
+      "Content-Type": "application/json"
     }
   })
     .then(response => {
@@ -328,7 +330,10 @@ function applyFollowUser(state, action) {
     }
     return user;
   });
-  return { ...state, userList: updatedUserList };
+  return {
+    ...state,
+    userList: updatedUserList
+  };
 }
 
 function applyUnfollowUser(state, action) {
@@ -358,6 +363,7 @@ function applySetImageList(state, action) {
     imageList
   };
 }
+
 // exports
 
 const actionCreators = {
