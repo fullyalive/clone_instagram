@@ -196,7 +196,8 @@ function getExplore() {
     fetch(`/users/explore`, {
       method: "GET",
       headers: {
-        Authorization: `JWT ${token}`
+        Authorization: `JWT ${token}`,
+        "Content-Type": "application/json"
       }
     })
       .then(response => {
