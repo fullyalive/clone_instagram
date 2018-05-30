@@ -18,6 +18,7 @@ class Container extends Component {
       });
     }
   }
+
   render() {
     return <UserList {...this.props} {...this.state} />;
   }

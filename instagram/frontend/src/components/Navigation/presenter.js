@@ -17,7 +17,7 @@ const Navigation = (props, context) => (
         </Link>
       </div>
       <div className={styles.column}>
-        <form onSubmit={props.onSubmit}>
+        <form method="post" onSubmit={props.onSubmit}>
           <input
             type="text"
             placeholder={context.t("검색")}
@@ -46,14 +46,14 @@ const Navigation = (props, context) => (
   </div>
 );
 
-Navigation.contextTypes = {
-  t: PropTypes.func.isRequired
+Navigation.propTypes = {
+  onInputChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired
 };
 
-Navigation.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  onInputChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired
+Navigation.contextTypes = {
+  t: PropTypes.func.isRequired
 };
 
 export default Navigation;
