@@ -1,0 +1,132 @@
+msgid ""
+msgstr ""
+"Language: ja"
+
+#: src/components/Auth/presenter.js
+msgid "계정이 없으신가요?"
+msgstr "アカウントをお持ちでないですか？"
+
+#: src/components/Auth/presenter.js
+msgid "회원가입"
+msgstr "登録する"
+
+#: src/components/Auth/presenter.js
+msgid "계정이 있으신가요?"
+msgstr "アカウントをお持ちですか？"
+
+#: src/components/Auth/presenter.js
+#: src/components/LoginForm/presenter.js
+msgid "로그인"
+msgstr "ログイン"
+
+#: src/components/Auth/presenter.js
+msgid "앱 다운로드"
+msgstr "ダウンロード"
+
+#: src/components/Footer/index.js
+msgid "INSTAGRAM 정보"
+msgstr "INSTAGRAMについて"
+
+#: src/components/Footer/index.js
+msgid "지원"
+msgstr "サポート"
+
+#: src/components/Footer/index.js
+msgid "블로그"
+msgstr "ブログ"
+
+#: src/components/Footer/index.js
+msgid "홍보 센터"
+msgstr "プレス"
+
+#: src/components/Footer/index.js
+msgid "API"
+msgstr "API"
+
+#: src/components/Footer/index.js
+msgid "채용 정보"
+msgstr "求人"
+
+#: src/components/Footer/index.js
+msgid "개인정보처리방침"
+msgstr "プライバシー"
+
+#: src/components/Footer/index.js
+msgid "약관"
+msgstr "利用規約"
+
+#: src/components/Footer/index.js
+msgid "디렉터리"
+msgstr "ディレクトリ"
+
+#: src/components/Footer/index.js
+msgid "언어"
+msgstr "言語"
+
+#: src/components/LoginForm/presenter.js
+msgid "전화번호, 사용자 이름 또는 이메일"
+msgstr "電話番号、ユーザーネーム、メールアドレス"
+
+#: src/components/LoginForm/presenter.js
+#: src/components/SignupForm/presenter.js
+msgid "비밀번호"
+msgstr "パスワード"
+
+#: src/components/LoginForm/presenter.js
+#: src/components/SignupForm/presenter.js
+msgid "또는"
+msgstr "または"
+
+#: src/components/LoginForm/presenter.js
+#: src/components/SignupForm/presenter.js
+msgid "Facebook으로 로그인"
+msgstr "Facebookでログイン"
+
+#: src/components/LoginForm/presenter.js
+msgid "비밀번호를 잊으셨나요?"
+msgstr "パスワードを忘れた場合"
+
+#: src/components/SignupForm/presenter.js
+msgid "친구들의 사진과 동영상을 보려면 가입하세요."
+msgstr "友達の写真や動画をチェックしよう"
+
+#: src/components/SignupForm/presenter.js
+msgid "휴대폰 번호 또는 이메일 주소"
+msgstr "電話番号またはメールアドレス"
+
+#: src/components/SignupForm/presenter.js
+msgid "성명"
+msgstr "フルネーム"
+
+#: src/components/SignupForm/presenter.js
+msgid "사용자 이름"
+msgstr "ユーザーネーム"
+
+#: src/components/SignupForm/presenter.js
+msgid "가입"
+msgstr "登録する"
+
+#: src/components/SignupForm/presenter.js
+msgid "가입하면 Instagram의 "
+msgstr "登録することで、 Instagramの"
+
+#: src/components/SignupForm/presenter.js
+msgid "약관,"
+msgstr "利用規約、"
+
+#: src/components/SignupForm/presenter.js
+msgid "데이터 정책"
+msgstr "データに関するポリシー、"
+
+#: src/components/SignupForm/presenter.js
+msgid " 및"
+msgstr ""
+
+#: src/components/SignupForm/presenter.js
+msgid "쿠키 정책"
+msgstr "Cookieポリシー"
+
+#: src/components/SignupForm/presenter.js
+msgid "에 동의하게 됩니다."
+msgstr "に同意するものとします。"
+
