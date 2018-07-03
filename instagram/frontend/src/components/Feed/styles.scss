@@ -1,9 +1,10 @@
 .feed {
-    min-height: 500px;
+    min-height: 300px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
     max-width: $max-page-width;
     margin: 0 auto;
-    align-items: center;
+    align-items: space-between;
+    justify-content: center;
 }

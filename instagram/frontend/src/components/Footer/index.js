@@ -7,21 +7,21 @@ const Footer = (props, context) => (
     <div className={styles.column}>
       <nav className={styles.nav}>
         <ul className={styles.list}>
-          <li className={styles.listItem}>{context.t("INSTAGRAM 정보")}</li>
-          <li className={styles.listItem}>{context.t("지원")}</li>
-          <li className={styles.listItem}>{context.t("블로그")}</li>
-          <li className={styles.listItem}>{context.t("홍보 센터")}</li>
-          <li className={styles.listItem}>{context.t("API")}</li>
-          <li className={styles.listItem}>{context.t("채용 정보")}</li>
-          <li className={styles.listItem}>{context.t("개인정보처리방침")}</li>
-          <li className={styles.listItem}>{context.t("약관")}</li>
-          <li className={styles.listItem}>{context.t("디렉터리")}</li>
-          <li className={styles.listItem}>{context.t("언어")}</li>
+          <li className={styles.listItem}>wecode 정보</li>
+          <li className={styles.listItem}>지원</li>
+          <li className={styles.listItem}>블로그</li>
+          <li className={styles.listItem}>홍보 센터</li>
+          <li className={styles.listItem}>API</li>
+          <li className={styles.listItem}>채용 정보</li>
+          <li className={styles.listItem}>개인정보처리방침</li>
+          <li className={styles.listItem}>약관</li>
+          <li className={styles.listItem}>디렉터리</li>
+          <li className={styles.listItem}>언어</li>
         </ul>
       </nav>
     </div>
     <div className={styles.column}>
-      <span className={styles.copyright}>© 2018 Instagram</span>
+      <span className={styles.copyright}>© 2018 wecode</span>
     </div>
   </footer>
 );

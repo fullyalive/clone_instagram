@@ -12,7 +12,7 @@ const LoginForm = (props, context) => (
     >
       <input
         type="text"
-        placeholder={context.t("전화번호, 사용자 이름 또는 이메일")}
+        placeholder="전화번호, 사용자 이름 또는 이메일"
         className={formStyles.textInput}
         value={props.usernameValue}
         onChange={props.handleInputChange}
@@ -20,7 +20,7 @@ const LoginForm = (props, context) => (
       />
       <input
         type="password"
-        placeholder={context.t("비밀번호")}
+        placeholder="비밀번호"
         className={formStyles.textInput}
         value={props.passwordValue}
         onChange={props.handleInputChange}
@@ -28,11 +28,11 @@ const LoginForm = (props, context) => (
       />
       <input
         type="submit"
-        value={context.t("로그인")}
+        value="로그인"
         className={formStyles.button}
       />
     </form>
-    <span className={formStyles.divider}>{context.t("또는")}</span>
+    <span className={formStyles.divider}>또는</span>
     <FacebookLogin
       appId="168532063764387"
       autoLoad={false}
@@ -40,10 +40,10 @@ const LoginForm = (props, context) => (
       callback={props.handleFacebookLogin}
       cssClass={formStyles.facebookLink}
       icon="fa-facebook-official"
-      textButton={context.t("Facebook으로 로그인")}
+      textButton="Facebook으로 로그인"
     />
     <span className={formStyles.forgotLink}>
-      {context.t("비밀번호를 잊으셨나요?")}
+      비밀번호를 잊으셨나요?
     </span>
   </div>
 );

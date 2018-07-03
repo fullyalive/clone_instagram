@@ -9,11 +9,11 @@ const Search = (props, context) => {
   return (
     <div className={styles.search}>
       <div className={styles.section}>
-        <h4 className={styles.title}>{context.t("Users")}</h4>
+        <h4 className={styles.title}>{context.t("유저")}</h4>
         {props.loading && <Loading />}
         {!props.loading &&
           props.userList.length < 1 && (
-            <NotFound text={context.t("Nothing found :(")} />
+            <NotFound text="검색결과가 없어요 :(" />
           )}
         <div className={styles.content}>
           {!props.loading &&
@@ -23,11 +23,11 @@ const Search = (props, context) => {
         </div>
       </div>
       <div className={styles.section}>
-        <h4 className={styles.title}>{context.t("Photos")}</h4>
+        <h4 className={styles.title}>{context.t("질문")}</h4>
         {props.loading && <Loading />}
         {!props.loading &&
           props.imageList.length < 1 && (
-            <NotFound text={context.t("Nothing found :(")} />
+          <NotFound text="검색결과가 없어요 :(" />
           )}
         <div className={styles.content}>
           {!props.loading &&

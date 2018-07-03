@@ -1,6 +1,7 @@
 .feed-photo {
   @include boxBorder(yes);
-  width: 100%;
+  width: 40%;
+  margin: 5%;
   max-width: $max-card-width;
   margin-bottom: 60px;
   @include breakpoint("phone") {
