@@ -257,7 +257,7 @@ class ImageDetail(APIView):
 
     def delete(self, request, image_id, format=None):
 
-        user - request.user
+        user = request.user
 
         image = self.find_own_image(self, image_id, user)
 
